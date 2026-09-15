@@ -1,5 +1,20 @@
 def calcular_imc(peso, altura):
-    indice = peso / (altura **2)
-    return indice
-oloko = calcular_imc(75, 1.75)
-print(f"{oloko:.2f}")    
+    return peso / (altura ** 2)
+
+def classificar_imc(imc):
+    if imc < 18.5:
+        return "Abaixo do peso"
+    elif 18.5 <= imc < 25:
+        return "Peso normal"
+    elif 25 <= imc < 30:
+        return "Sobrepeso"
+    else:
+        return "Obesidade"
+
+peso = 75
+altura = 1.75
+
+imc = calcular_imc(peso, altura)
+categoria = classificar_imc(imc)
+
+print(f"IMC: {imc:.2f} - Categoria: {categoria}")
